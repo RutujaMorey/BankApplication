@@ -1,0 +1,15 @@
+{
+    "accountNumber": "JOH514AT7845",
+    "username": "johnsmi23",
+    "name": "John Smith",
+    "address": "380 Park street",
+    "state": "Atlanta",
+    "country": "USA",
+    "emailAddress": "johnS@gmai.com",
+    "pan": "ABC7845Z",
+    "contactNumber": "7548573245",
+    "dob": "09/06/1996",
+    "accountType": "Savings",
+    "deposit": 6000.0,
+    "customerId": "BNYAT1"
+}
