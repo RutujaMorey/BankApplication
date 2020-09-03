@@ -1,38 +1,11 @@
 package com.microc.customeraccountservice;
 
-import static org.junit.Assert.assertNotNull;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MvcResult;
-
-import com.microc.customeraccountservice.dto.NewLoanDTO;
-import com.microc.customeraccountservice.dto.NewLoanResponse;
-import com.microc.customeraccountservice.entity.NewLoanEntity;
-import com.microc.customeraccountservice.entity.NewUserEntity;
-
-@SpringBootTest
+//@SpringBootTest
 class CustomeraccountserviceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+//	@Test
+//	void contextLoads() {
+//	}
 
 //	@Test
 //	public void testApplyLoan() throws Exception {

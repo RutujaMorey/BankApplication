@@ -1,0 +1,9 @@
+{
+	"password": "$2a$10$YnUP8lUQ7yQqU/mfei0b9uOdvR5BdwPND1WQgRQYa9OxeTrQNB3hm",
+	"username": "johnsmi23",
+	"authorities": [],
+	"accountNonExpired": true,
+	"accountNonLocked": true,
+	"credentialsNonExpired": true,
+	"enabled": true
+}

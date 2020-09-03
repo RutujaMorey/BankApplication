@@ -10,7 +10,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Before;
@@ -20,10 +19,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
@@ -55,18 +50,7 @@ public class CustomerAccountServicesTests {
 		MockitoAnnotations.initMocks(this);
 		gson = new Gson();
 
-//		userDetailsCollections = gson.fromJson(
-//				new BufferedReader(new FileReader("src/test/java/resources/UserDetails.json")),
-//				new TypeToken<ArrayList<UserDetailsCollections>>() {
-//				}.getType());
-//		userCredentialsCollection = gson.fromJson(
-//				new BufferedReader(new FileReader("src/test/java/resources/UserCredentials.json")),
-//				new TypeToken<ArrayList<UserCredentialsCollections>>() {
-//				}.getType());
-
 	}
-
-	
 
 	@Test
 	public void testApplyLoanFailure() throws Exception {
@@ -96,6 +80,7 @@ public class CustomerAccountServicesTests {
 
 		verify(customerAccountRepository, times(1)).findByCustomerId("BNYAT1");
 	}
+
 	@Test
 	public void testGetLoanDetailsFailure() throws Exception {
 		when(customerAccountRepository.findByCustomerId("BNYAT1")).thenReturn(null);
@@ -104,6 +89,19 @@ public class CustomerAccountServicesTests {
 		assertNull(actual);
 
 		verify(customerAccountRepository, times(1)).findByCustomerId("BNYAT1");
+	}
+
+	@Test
+	public void testApplyLoanFail() throws Exception {
+		NewLoanDTO newLoanDTO = gson.fromJson(
+				new BufferedReader(new FileReader("src/test/resources/ApplyLoanRequest.json")), NewLoanDTO.class);
+		newLoanDTO.setInterestPercent(null);
+		newLoanDTO.setLoanAmount(null);
+		newLoanDTO.setMaturityDate(null);
+		newLoanDTO.setCustomerId(null);
+
+		NewLoanResponse newLoanResponse = customerAccountService.applyLoan(newLoanDTO);
+		assertNotNull(newLoanResponse);
 	}
 
 
